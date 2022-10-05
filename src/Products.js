@@ -1,9 +1,31 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import { Formik, Form, Field } from "formik";
 import "./app.css";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 const Products= () => {
+  const [data, setData] = useState({})
+  
+  useEffect(() => {
+    console.log(data)
+    function addProduct(item){
+      console.log(data)
+      if (item) {
+        fetch('http://localhost:5000/products/addProduct', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            item: item,
+          }),
+        }).then((res) => {
+          console.log(res);
+        }).catch((err) => {
+          console.log(err.message);
+        });
+      }
+    }
+  }, [data]);
+  
   return (
     <div>
       <Formik
@@ -21,7 +43,8 @@ const Products= () => {
         }}
         onSubmit={(values) => {
           // same shape as initial values
-          console.log(values);
+          addProduct(values)
+          setData(values)
         }}
       >
         <Form class="form-body">
