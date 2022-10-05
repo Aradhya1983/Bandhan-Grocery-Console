@@ -5,25 +5,28 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 const Products= () => {
  const[data,setData]=useState({})
+ useEffect(() => {
+  console.log("data>>>>>>>>>1947",data)
+  console.log("hello")
+    if (data) {
+      fetch('http://localhost:5000/products/addProduct', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          item: data,
+        }),
+      }).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err.message);
+      });
+    }
   
+},[data] );
  function AddProduct(item){
+  setData(item)
  console.log("item>>>>>>>",item)
-  useEffect(() => {
-      if (item) {
-        fetch('http://localhost:5000/products/addProduct', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            item: item,
-          }),
-        }).then((res) => {
-          console.log(res);
-        }).catch((err) => {
-          console.log(err.message);
-        });
-      }
-    
-  },[item] );
+ 
  }
   
   return (
