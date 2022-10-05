@@ -16,7 +16,10 @@ const Products= () => {
           item: data.Products
         }),
       }).then((res) => {
-        console.log(res);
+        return res.json()
+      }).then((data)=>{
+        alert(data)
+        console.log(data)
       }).catch((err) => {
         console.log(err.message);
       });
@@ -76,6 +79,7 @@ const Products= () => {
                     class="form-control"
                     name="Products.prod_discount"
                     placeholder="prod_discount"
+                    type={"number"}
                   />
                 </div>
                 <div class="col-md-12">

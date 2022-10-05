@@ -11,9 +11,9 @@ const BasicExample = () =>
 
   <Router>
     <h3>Bandhan grocery console</h3>
-    <div >
-      <ul style={{diplay:"flex"}}>
-        <li >
+    <div>
+      <ul style={{display:'flex'}}>
+        <li>
           <Link to="/">Home</Link>
         </li>
         <li>

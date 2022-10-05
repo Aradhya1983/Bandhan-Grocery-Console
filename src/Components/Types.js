@@ -1,6 +1,33 @@
-import React from 'react'
+import {React, useEffect, useState} from 'react'
 import { Formik, Form, Field } from "formik";
 const Types = () => {
+  const[data,setData]=useState({})
+  useEffect(() => {
+   console.log("data>>>>>>>>>1947",data)
+   console.log("hello")
+     if (data) {
+       fetch('http://localhost:5000/products/addProductTypes', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+         body: JSON.stringify({
+           item: data.Products
+         }),
+       }).then((res) => {
+        return res.json();
+       }).then((data)=>{
+        alert(data)
+       }).catch((err) => {
+         console.log(err.message);
+       });
+     }
+   
+ },[data] );
+  function AddTypes(item){
+   setData(item)
+  console.log("item>>>>>>>",item)
+  
+  }
+
   return (
    
          <div>
@@ -21,7 +48,7 @@ const Types = () => {
         }}
         onSubmit={(values) => {
           // same shape as initial values
-         
+         AddTypes(values)
          console.log(values);
         
         }}
@@ -71,6 +98,7 @@ const Types = () => {
                     class="form-control"
                     name="Products.type.price"
                     placeholder="price"
+                    type={"number"}
                   />
                 </div>
 
@@ -79,6 +107,7 @@ const Types = () => {
                     class="form-control"
                     name="Products.type.qty"
                     placeholder="quantity"
+                    type={"number"}
                   />
                 </div>
                 <div class="col-md-12">

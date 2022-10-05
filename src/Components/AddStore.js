@@ -13,7 +13,9 @@ const AddStore = () => {
            item: data
          }),
        }).then((res) => {
-         console.log(res);
+        return res.json();
+       }).then((data)=>{
+        alert(data);
        }).catch((err) => {
          console.log(err.message);
        });
@@ -64,6 +66,7 @@ const AddStore = () => {
                     class="form-control"
                     name="Store.average_reviews"
                     placeholder="average reviews"
+                    type={"number"}
                   />
                 </div>
                 <div class="col-md-12">
@@ -78,6 +81,7 @@ const AddStore = () => {
                     class="form-control"
                     name="Store.collect_times"
                     placeholder="collect times"
+                    type={"number"}
                   />
                 </div>
                 <div class="col-md-12">
@@ -99,6 +103,7 @@ const AddStore = () => {
                     class="form-control"
                     name="Store.delivery_time"
                     placeholder="delivery time"
+                    type={"number"}
                   />
                 </div>
 
@@ -107,6 +112,7 @@ const AddStore = () => {
                     class="form-control"
                     name="Store.discount"
                     placeholder="discount"
+                    type={"number"}
                   />
                 </div>
 
@@ -115,6 +121,7 @@ const AddStore = () => {
                     class="form-control"
                     name="Store.no_of_reviews"
                     placeholder="no of reviews"
+                    type={"number"}
                   />
                 </div>
 

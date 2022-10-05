@@ -4,6 +4,7 @@ const productService = require('../services/productService.js')
 let productControl = []
 productControl.getAllProducts = getAllProducts
 productControl.addProduct = addProduct
+productControl.addProductTypes = addProductTypes
 
 module.exports = productControl;
 
@@ -13,6 +14,14 @@ async function getAllProducts(){
     return products
 }
 async function addProduct(params){
-    await productService.addProduct(params)
-    console.log("Success")
+    if(params.item){
+        let response = await productService.addProduct(params)
+        return response;
+    }
+}
+async function addProductTypes(params){
+    if(params.item){
+        let response = await productService.addProductTypes(params)
+        return response;
+    }
 }
