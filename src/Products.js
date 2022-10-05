@@ -109,21 +109,6 @@ const Products= () => {
                   />
                 </div>
 
-                <div class="col-md-12">
-                  <Field
-                    class="form-control"
-                    name="Products.type.price"
-                    placeholder="price"
-                  />
-                </div>
-
-                <div class="col-md-12">
-                  <Field
-                    class="form-control"
-                    name="Products.type.size"
-                    placeholder="size"
-                  />
-                </div>
                 <button type="submit" class="form-button mt-3">Submit</button>
               </div>
             </div>

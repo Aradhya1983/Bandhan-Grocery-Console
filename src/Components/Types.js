@@ -11,7 +11,7 @@ const Types = () => {
             prod_code: "",
             prod_id: "",
             store_id: "",
-             types:{
+             type:{
                 price:'',
                 qty:'',
                 size:''

@@ -23,7 +23,7 @@ async function getAllProducts(){
 //add Prod Details
 async function addProduct(params){
     params = params.item
-    console.log("Success", params)
+    console.log("Success",)
     // console.log(userId)
     // console.log("ADD",item)
     const docRef = await firestore.addDoc(colRef, {
