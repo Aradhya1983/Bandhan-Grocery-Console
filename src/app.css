@@ -16,16 +16,15 @@ html, body {
 
 
 .form-holder {
-      display: flex;
+      /* display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: center; */
       align-items: center;
       text-align: center;
       min-height: 100vh;
 }
 
 .form-holder .form-content {
-    position: relative;
     text-align: center;
     display: -webkit-box;
     display: -moz-box;
