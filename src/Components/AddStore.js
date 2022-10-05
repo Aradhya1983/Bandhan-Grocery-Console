@@ -1,93 +1,71 @@
-import {React, useEffect, useState} from "react";
+import React from 'react'
 import { Formik, Form, Field } from "formik";
-import "./app.css";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-const Products= () => {
-  const [data, setData] = useState({})
-  
- function AddProduct(item){
-  useEffect(() => {
-    console.log(data)
-    
-      console.log(data)
-      if (item) {
-        fetch('http://localhost:5000/products/addProduct', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            item: item,
-          }),
-        }).then((res) => {
-          console.log(res);
-        }).catch((err) => {
-          console.log(err.message);
-        });
-      }
-    
-  }, );
- }
-  
+const AddStore = () => {
   return (
     <div>
+          <div>
       <Formik
         initialValues={{
-          Products: {
-            category: "",
-            prod_code: "",
-            prod_discount: "",
-            prod_id: "",
-            prod_image: "",
-            prod_name: "",
-            store_id: "",
-          
+          Store: {
+            average_reviews: "",
+            business_address: "",
+            collect_times: "",
+            coordinates: {
+                Latitude:'',
+                Longitude:''
+            },
+            delivery_time: "",
+            discount: "",
+            no_of_reviews: "",
+            store_id:"",
+            store_img:"",
+            store_name:""
           },
         }}
         onSubmit={(values) => {
           // same shape as initial values
-          AddProduct(values)
-          setData(values)
+          console.log(values);
         }}
       >
         <Form class="form-body">
           <div class="row">
             <div class="form-holder">
               <div class="form-items">
-                <h3>Products</h3>
-                <p>Fill in the data of products</p>
+                <h3>Stores</h3>
+                <p>Add stores data here</p>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.category"
-                    placeholder="category"
+                    name="Store.average_reviews"
+                    placeholder="average_reviews"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.prod_code"
-                    placeholder="prod_code"
+                    name="store.business_address"
+                    placeholder="business_address"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.prod_discount"
-                    placeholder="prod_discount"
+                    name="store.cordinates.Latitude"
+                    placeholder="prod discount"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.prod_id"
-                    placeholder="prod_id"
+                    name="store.coordinates.Longitude"
+                    placeholder="prod id"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.prod_image"
-                    placeholder="prod_image"
+                    name="store.delivery_time"
+                    placeholder="prod image"
                   />
                 </div>
 
@@ -95,7 +73,7 @@ const Products= () => {
                   <Field
                     class="form-control"
                     name="Products.prod_name"
-                    placeholder="prod_name"
+                    placeholder="prod name"
                   />
                 </div>
 
@@ -131,7 +109,8 @@ const Products= () => {
       <></>
       
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Products;
+export default AddStore
