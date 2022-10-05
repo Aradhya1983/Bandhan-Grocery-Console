@@ -43,43 +43,43 @@ const AddStore = () => {
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.business_address"
-                    placeholder="business_address"
+                    name="Store.business_address"
+                    placeholder="business address"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.collect_times"
-                    placeholder="collect_times"
+                    name="Store.collect_times"
+                    placeholder="collect times"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.cordinates.Latitude"
-                    placeholder="Cordinates-Latitude"
+                    name="Store.cordinates.Latitude"
+                    placeholder="Cordinates Latitude"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.cordinates.Longitude"
+                    name="Store.cordinates.Longitude"
                     placeholder="Cordaintes-longitude"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.delivery_time"
-                    placeholder="delivery_time"
+                    name="Store.delivery_time"
+                    placeholder="delivery time"
                   />
                 </div>
 
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.discount"
+                    name="Store.discount"
                     placeholder="discount"
                   />
                 </div>
@@ -87,31 +87,31 @@ const AddStore = () => {
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.no_of_reviews"
-                    placeholder="no_of_reviews"
+                    name="Store.no_of_reviews"
+                    placeholder="no of reviews"
                   />
                 </div>
 
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.store_id"
-                    placeholder="store_id"
+                    name="Store.store_id"
+                    placeholder="store id"
                   />
                 </div>
 
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.store_img"
-                    placeholder="store_img"
+                    name="Store.store_img"
+                    placeholder="store img"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.store_name"
-                    placeholder="store_name"
+                    name="Store.store_name"
+                    placeholder="store name"
                   />
                 </div>
                 <button type="submit" class="form-button mt-3">Submit</button>

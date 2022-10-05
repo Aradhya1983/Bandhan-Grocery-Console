@@ -6,6 +6,7 @@ import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import About from './Components/About';
 import AddStore from './Components/AddStore';
+import Types from './Components/Types';
 const BasicExample = () =>
 
   <Router>
@@ -21,6 +22,9 @@ const BasicExample = () =>
         <li>
           <Link to="/store">Add store data</Link>
         </li>
+        <li>
+          <Link to="/addTypes">Add Product Types</Link>
+        </li>
       </ul>
 
       <hr />
@@ -28,6 +32,7 @@ const BasicExample = () =>
         <Route exact path="/" element={<Products/>}/>
         <Route path="/about" element={<About/>} />
         <Route path="/store" element={<AddStore/>} />
+        <Route path="/addTypes" element={<Types/>} />
      </Routes>
      
       {/* 
