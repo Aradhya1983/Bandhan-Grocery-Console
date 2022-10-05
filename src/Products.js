@@ -4,13 +4,11 @@ import "./app.css";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 const Products= () => {
-  const [data, setData] = useState({})
+ const[data,setData]=useState({})
   
  function AddProduct(item){
+ console.log("item>>>>>>>",item)
   useEffect(() => {
-    console.log(data)
-    
-      console.log(data)
       if (item) {
         fetch('http://localhost:5000/products/addProduct', {
           method: 'POST',
@@ -25,7 +23,7 @@ const Products= () => {
         });
       }
     
-  }, );
+  },[item] );
  }
   
   return (
@@ -45,8 +43,9 @@ const Products= () => {
         }}
         onSubmit={(values) => {
           // same shape as initial values
-          AddProduct(values)
-          setData(values)
+         
+          AddProduct(values);
+        
         }}
       >
         <Form class="form-body">
