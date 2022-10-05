@@ -11,9 +11,9 @@ const Products= () => {
     if (data) {
       fetch('http://localhost:5000/products/addProduct', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         body: JSON.stringify({
-          item: data,
+          item: data.Products
         }),
       }).then((res) => {
         console.log(res);
@@ -38,10 +38,10 @@ const Products= () => {
             prod_code: "",
             prod_discount: "",
             prod_id: "",
-            prod_image: "",
+            prod_img: "",
             prod_name: "",
             store_id: "",
-          
+
           },
         }}
         onSubmit={(values) => {
@@ -88,8 +88,8 @@ const Products= () => {
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.prod_image"
-                    placeholder="prod_image"
+                    name="Products.prod_img"
+                    placeholder="prod_img"
                   />
                 </div>
 

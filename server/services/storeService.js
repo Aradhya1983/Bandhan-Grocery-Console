@@ -20,6 +20,25 @@ async function getAllStores(){
     return stores;
 }
 async function addStore(params){
-
+    console.log("Success", params)
+    params = params.item.Store
+    // console.log(userId)
+    // console.log("ADD",item)
+    let coordinatesVar = {lat: params.coordinates.Latitude,
+                          long: params.coordinates.Longitude}
+                          
+    const docRef = await firestore.addDoc(colRef, {
+        average_reviews: params.average_reviews,
+        business_address: params.business_address,
+        collect_times: params.collect_times,
+        coordinates: coordinatesVar,
+        delivery_time: params.delivery_time,
+        discount: params.discount,
+        no_of_reviews: params.no_of_reviews,
+        store_id: params.store_id,
+        store_img: params.store_img,
+        store_name: params.store_name
+      });
+      console.log("Document written with ID: ", docRef.id);
 }
 

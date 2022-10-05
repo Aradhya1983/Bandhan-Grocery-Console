@@ -1,6 +1,31 @@
-import React from 'react'
+import {React, useEffect, useState}  from 'react'
 import { Formik, Form, Field } from "formik";
 const AddStore = () => {
+  const[data,setData]=useState({})
+  useEffect(() => {
+   console.log("data>>>>>>>>>1947",data)
+   console.log("hello")
+     if (data) {
+       fetch('http://localhost:5000/stores/addStore', {
+         method: 'POST',
+         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+         body: JSON.stringify({
+           item: data
+         }),
+       }).then((res) => {
+         console.log(res);
+       }).catch((err) => {
+         console.log(err.message);
+       });
+     }
+   
+ },[data] );
+  function AddStore(item){
+   setData(item)
+  console.log("item>>>>>>>",item)
+  
+  }
+
   return (
     <div>
           <div>
@@ -10,7 +35,7 @@ const AddStore = () => {
             average_reviews: "",
             business_address: "",
             collect_times: "",
-            cordinates: {
+            coordinates: {
                 Latitude:'',
                 Longitude:''
             },
@@ -24,6 +49,7 @@ const AddStore = () => {
         }}
         onSubmit={(values) => {
           // same shape as initial values
+          AddStore(values)
           console.log(values);
         }}
       >
@@ -57,15 +83,15 @@ const AddStore = () => {
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Store.cordinates.Latitude"
-                    placeholder="Cordinates Latitude"
+                    name="Store.coordinates.Latitude"
+                    placeholder="Coordinates Latitude"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Store.cordinates.Longitude"
-                    placeholder="Cordaintes-longitude"
+                    name="Store.coordinates.Longitude"
+                    placeholder="Coordinates-longitude"
                   />
                 </div>
                 <div class="col-md-12">

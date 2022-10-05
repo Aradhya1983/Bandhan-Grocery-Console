@@ -6,6 +6,7 @@ router.use((req,res,next)=>{
     next()
 })
 router.post("/getAllProducts", getAllProducts)
+router.post("/addProduct", addProduct)
 
 module.exports = router;
 
@@ -16,5 +17,6 @@ async function getAllProducts(req,res){
 }
 
 async function addProduct(req,res){
+    console.log(req.body)
     await productControl.addProduct(req.body)
-}
+} 

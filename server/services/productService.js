@@ -22,10 +22,10 @@ async function getAllProducts(){
 
 //add Prod Details
 async function addProduct(params){
-    console.log("Success")
+    params = params.item
+    console.log("Success", params)
     // console.log(userId)
-    console.log("ADD",item)
-    
+    // console.log("ADD",item)
     const docRef = await firestore.addDoc(colRef, {
         category: params.category,
         prod_code: params.prod_code,
@@ -33,8 +33,7 @@ async function addProduct(params){
         prod_id: params.prod_id,
         prod_img: params.prod_img,
         prod_name: params.prod_name,
-        store_id: params.store_id,
-        types: []
+        store_id: params.store_id
       });
       console.log("Document written with ID: ", docRef.id);
 }
