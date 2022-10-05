@@ -10,7 +10,7 @@ const AddStore = () => {
             average_reviews: "",
             business_address: "",
             collect_times: "",
-            coordinates: {
+            cordinates: {
                 Latitude:'',
                 Longitude:''
             },
@@ -37,7 +37,7 @@ const AddStore = () => {
                   <Field
                     class="form-control"
                     name="Store.average_reviews"
-                    placeholder="average_reviews"
+                    placeholder="average reviews"
                   />
                 </div>
                 <div class="col-md-12">
@@ -50,37 +50,52 @@ const AddStore = () => {
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.cordinates.Latitude"
-                    placeholder="prod discount"
+                    name="store.collect_times"
+                    placeholder="collect_times"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="store.coordinates.Longitude"
-                    placeholder="prod id"
+                    name="store.cordinates.Latitude"
+                    placeholder="Cordinates-Latitude"
+                  />
+                </div>
+                <div class="col-md-12">
+                  <Field
+                    class="form-control"
+                    name="store.cordinates.Longitude"
+                    placeholder="Cordaintes-longitude"
                   />
                 </div>
                 <div class="col-md-12">
                   <Field
                     class="form-control"
                     name="store.delivery_time"
-                    placeholder="prod image"
+                    placeholder="delivery_time"
                   />
                 </div>
 
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.prod_name"
-                    placeholder="prod name"
+                    name="store.discount"
+                    placeholder="discount"
                   />
                 </div>
 
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.store_id"
+                    name="store.no_of_reviews"
+                    placeholder="no_of_reviews"
+                  />
+                </div>
+
+                <div class="col-md-12">
+                  <Field
+                    class="form-control"
+                    name="store.store_id"
                     placeholder="store_id"
                   />
                 </div>
@@ -88,16 +103,15 @@ const AddStore = () => {
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.type.price"
-                    placeholder="price"
+                    name="store.store_img"
+                    placeholder="store_img"
                   />
                 </div>
-
                 <div class="col-md-12">
                   <Field
                     class="form-control"
-                    name="Products.type.size"
-                    placeholder="size"
+                    name="store.store_name"
+                    placeholder="store_name"
                   />
                 </div>
                 <button type="submit" class="form-button mt-3">Submit</button>

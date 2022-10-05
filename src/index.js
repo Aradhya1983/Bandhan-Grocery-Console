@@ -5,6 +5,7 @@ import Products from './Products';
 import { render } from "react-dom";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import About from './Components/About';
+import AddStore from './Components/AddStore';
 const BasicExample = () =>
 
   <Router>
@@ -18,7 +19,7 @@ const BasicExample = () =>
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/topics">Topics</Link>
+          <Link to="/store">Add store data</Link>
         </li>
       </ul>
 
@@ -26,6 +27,7 @@ const BasicExample = () =>
      <Routes>
         <Route exact path="/" element={<Products/>}/>
         <Route path="/about" element={<About/>} />
+        <Route path="/store" element={<AddStore/>} />
      </Routes>
      
       {/* 
